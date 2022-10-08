@@ -10,8 +10,5 @@
 }
 
 .nav-link{
-    color: tomato !important;
-}
-.active{
-    color: chartreuse !important;
+    color: rgb(255, 158, 214) !important;
 }

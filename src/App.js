@@ -1,21 +1,23 @@
-import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Main from './Layout/Main';
-import Home from './compo/Home/Home';
-import Order from './compo/Order/Order';
+import './App.css';
 import About from './compo/About/About';
+import CartedProducts from './compo/CartedProducts/CartedProducts';
+import Home from './compo/Home/Home';
+import Main from './Layout/Main';
 
 function App() {
   const router = createBrowserRouter([
     { path: '/' , element: <Main></Main>, children: [
-      {path: '/', element: <Home></Home>},
-      {path: '/home', element: <Home></Home>},
-      {path: '/orders', element: <Order></Order> },
+      {path: '/',
+      loader: async()=> fetch('t-shirt.json') ,
+      element: <Home></Home>},
+      {path: '/orders', element: <CartedProducts></CartedProducts> },
       {path: '/about', element: <About></About> },
-    ] }
+      // {path: '/home', element: <Home></Home>}
+    ] },
   ])
   return (
-    <div className="App">
+    <div className="container mx-auto text-center">
       <RouterProvider router={router}></RouterProvider>
     </div>
   );

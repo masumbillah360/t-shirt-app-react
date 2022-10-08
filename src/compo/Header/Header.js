@@ -4,10 +4,21 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <div className='link-container'>
-            <NavLink to='/home'>Home</NavLink>
-            <NavLink to='/orders'>Orders</NavLink>
-            <NavLink to='/about'>About</NavLink>
+        <div className='link-container rounded-b'>
+            <NavLink to='/'
+            className={({ isActive }) =>
+            isActive ? 'nav-link' : undefined}
+            >Home</NavLink>
+
+            <NavLink to='/orders'
+            className={({ isActive }) =>
+            isActive ? 'nav-link' : undefined}
+            >Orders</NavLink>
+
+            <NavLink to='/about'
+            className={({ isActive }) =>
+            isActive ? 'nav-link' : undefined}
+            >About</NavLink>
         </div>
     );
 };
