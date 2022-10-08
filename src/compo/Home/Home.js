@@ -19,6 +19,7 @@ const Home = () => {
             const newCart = [...cartedShirts, item];
             setCartedShirts(newCart)
             toast("Thanks For Adding..")
+            localStorage.setItem('cartedItems', JSON.stringify(newCart))
         }
     }
 
@@ -41,6 +42,8 @@ const Home = () => {
                     <Order orders={cartedShirts} removeItem={removeItem} key={cartedShirts._id}></Order>
                 </aside>
             </section>
+
+
             <ToastContainer 
             position='top-center'
             autoClose='1000'
